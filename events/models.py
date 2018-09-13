@@ -16,6 +16,11 @@ class Event(models.Model):
     event = models.CharField(max_length = 100)
     priority = models.CharField(max_length=1, choices=priorities_list)
 
+class Meta:
+    ordering = ('-date''-priority''event')
+    def number_of_comments(self):
+        return self.comment_event.count()
+
     def __str__(self):
         return self.event
 
@@ -32,3 +37,6 @@ class Coment(models.Model):
     def avatar(self):
         g = Gravatar(self.email)
         return g.get_image(default='identicon')
+
+    def __str__(self):
+        return "{} comentou em {:%c}".format(self.author, self.commented)
