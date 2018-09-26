@@ -1,13 +1,14 @@
 from django import forms
-from .models import Event, number_of_comments
+from .models import Event, Coment
+
 class EventForm(forms.ModelForm):
-    """Formulário ultilizado para criação de novos eventos"""
+    """Formulário utilizado para a inserção de novos eventos."""
     class Meta:
         model = Event
-        fields = ['date', 'event', 'priority']
+        fields = ['date', 'event', 'priority',]
 
 class CommentForm(forms.ModelForm):
-    """Formulário ultilizado para criação de comentários"""
+    """Formulário usado para a inserção de comentários em um evento."""
     class Meta:
-        model = Comment
+        model = Coment
         fields = ['text', 'author', 'email', 'event']

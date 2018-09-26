@@ -3,7 +3,7 @@ from django.utils import timezone
 from libgravatar import Gravatar
 
 
-class Event(models.Model):
+class Event(models . Model):
     priorities_list = (
         ('0' , 'Sem prioridade'),
         ('1' , 'Normal'),
@@ -18,10 +18,10 @@ class Event(models.Model):
 
 class Meta:
     ordering = ('-date''-priority''event')
-    def number_of_comments(self):
+def number_of_comments(self):
         return self.comment_event.count()
 
-    def __str__(self):
+def __str__(self):
         return self.event
 
 
@@ -34,9 +34,9 @@ class Coment(models.Model):
     event = models.ForeignKey(Event, on_delete=models.CASCADE, related_name='comment_event')
 
     """Retorna a partir do endereço de email, um avatar configurado no Gravatar"""
-    def avatar(self):
+def avatar(self):
         g = Gravatar(self.email)
         return g.get_image(default='identicon')
 
-    def __str__(self):
+def __str__(self):
         return "{} comentou em {:%c}".format(self.author, self.commented)
