@@ -1,5 +1,6 @@
 {% load static %}
 <html>
+{%include "Blog/header.html" %}
     <head>
         <title>Blog Myllene</title>
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
@@ -8,11 +9,12 @@
 
     </head>
     <body>
+    {% include "navbar.html" %}
         <div class="page-header">
             <a href="{% url 'cad_new' %}" class="top-menu"> Criar </a>
             <a href="{% url 'agenda-events-index' %}" class="top-menu"> Eventos </a>
-            <a href="{% url 'post_list' %}" class="top-menu">Nova página</a>
-            <h1><a href="{% url 'cad_list' %}">Blog Myllene</a></h1>
+            <a href="{% url 'cad_list' %}" class="top-menu">Cadastro</a>
+            <h1><a href="/">Blog Myllene</a></h1>
         </div>
 
         <div class="content container">

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Event, Coment
+from .models import Event, Coment, Cadastro
 
 # Register your models here.
 @admin.register(Event)
@@ -13,3 +13,4 @@ class EventAdmin(admin.ModelAdmin):
     search_fields = ("event", "date", )
 
 admin.site.register(Coment)
+admin.site.register(Cadastro)

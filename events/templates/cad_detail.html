@@ -1,0 +1,12 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+     <div class="post">
+         {{ cad.name }}
+         {{ cad.cidade }}
+         {{ cad.pais }}
+         {{ cad.cep }}
+         <a class="btn btn-default" href="{% url 'cad_edit' pk=cad.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+     </div>
+
+{% endblock %}

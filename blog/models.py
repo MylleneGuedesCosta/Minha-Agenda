@@ -16,3 +16,30 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class Cadastro(models.Model):
+    priorities_list = (
+        ('0', 'Sem prioridade'),
+        ('1', 'Normal'),
+        ('2', 'Urgente'),
+        ('3', 'Muito Urgente'),
+        ('4', 'Ultra Mrga Hiper Urgente')
+    )
+    priorities_list = (
+        ('0' , 'Sem prioridade'),
+        ('1' , 'Normal'),
+        ('2','Urgente'),
+        ('3', 'Muito Urgente'),
+        ('4', 'Ultra Mrga Hiper Urgente')
+    )
+    nome = models.CharField(max_length=200)
+    endereco = models.CharField(max_length=200)
+    telefone = models.CharField(max_length=200)
+    email = models.CharField(max_length=200)
+    cidade = models.CharField(max_length=200)
+    sexo = models.CharField(max_length=1, choices=priorities_list)
+    etnia = models.CharField(max_length=1, choices=priorities_list)
+
+    def __str__(self):
+        return self.nome
